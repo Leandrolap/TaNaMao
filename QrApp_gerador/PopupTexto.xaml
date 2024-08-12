@@ -1,0 +1,24 @@
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="QrApp_gerador.PopupTexto"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               CanBeDismissedByTappingOutsideOfPopup="False"
+               Color="Transparent"
+               NavigationPage.HasNavigationBar="False">
+
+    <ScrollView BackgroundColor="Transparent">
+        <Frame BackgroundColor="Black" Margin="20" Padding="0">
+            <VerticalStackLayout Margin="25">
+                <Label x:Name="QrTexto"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"/>
+
+                <Button Text="FECHAR"
+                        Clicked="OnClickFechar"
+                        Margin="20"
+                        BackgroundColor="Transparent"
+                        TextColor="White"/>
+            </VerticalStackLayout>
+        </Frame>
+    </ScrollView>
+</toolkit:Popup>

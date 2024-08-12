@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="QrApp_gerador.PopupCriaQr"
+               xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               CanBeDismissedByTappingOutsideOfPopup="False"
+               Color="#131313"
+               NavigationPage.HasNavigationBar="False">
+
+    <Grid HeightRequest="550" WidthRequest="400" Margin="25">
+        <VerticalStackLayout VerticalOptions="CenterAndExpand">
+            <Frame Padding="10" CornerRadius="30" Margin="50">
+                <VerticalStackLayout Spacing="15">
+                    <Label x:Name="LblTitulo"
+                           HorizontalOptions="Center" 
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           FontSize="22"
+                           FontFamily="MairyRegular"/>
+
+                    <zxing:BarcodeGeneratorView x:Name="ImgQr"
+                                                HeightRequest="250"
+                                                WidthRequest="250"
+                                                ForegroundColor="Black"
+                                                Format="QrCode"
+                                                Margin="3" />
+
+                    <Label Text="Faça um print para salvar este QrCode"
+                           HorizontalOptions="Center" 
+                           TextColor="Black"
+                           FontSize="9"
+                           FontFamily="MairyExtralight"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button x:Name="CounterBtn"
+                    Text="FECHAR"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    FontSize="20"
+                    Clicked="OnClickFechar"
+                    VerticalOptions="End"
+                    FontFamily="VigaRegular"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"/>
+        </VerticalStackLayout>
+    </Grid>
+</toolkit:Popup>

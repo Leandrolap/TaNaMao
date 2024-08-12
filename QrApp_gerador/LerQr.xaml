@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QrApp_gerador.LerQr"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             Title="LerQr"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <VerticalStackLayout Grid.Row="0">
+            <zxing:CameraBarcodeReaderView x:Name="cameraBarcodeReaderView"
+                                           BarcodesDetected="BarcodesDetected"
+                                           VerticalOptions="Start"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Margin="10">
+            <Button x:Name="BtnLink"
+                    Text="ABRIR LINK"
+                    BackgroundColor="Transparent"
+                    Margin="20"
+                    TextColor="White"
+                    Clicked="OnClickAbrir"
+                    IsVisible="False"
+                    IsEnabled="False"
+                    BorderColor="#696969"
+                    BorderWidth="1"
+                    HorizontalOptions="Center"/>
+
+            <Button x:Name="BtnNovoLink"
+                    Text="NOVA LEITURA"
+                    BackgroundColor="Transparent"
+                    Margin="20"
+                    IsVisible="False"
+                    IsEnabled="False"
+                    Clicked="OnClickedNovaLeitura"
+                    TextColor="White"
+                    BorderColor="#696969"
+                    BorderWidth="1"
+                    HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

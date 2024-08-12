@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QrApp_gerador.MainPage"
+             BackgroundColor="#131313"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="30,30" Spacing="55">
+                <HorizontalStackLayout Spacing="5">
+                    <VerticalStackLayout>
+                        <Label Text="TÁ NA MÃO"
+                               FontFamily="SignikaNegative"
+                               FontSize="30"
+                               HorizontalOptions="Start"/>
+                        <Label Text="Qr Code"
+                               HorizontalOptions="Start"
+                               TextColor="Grey"
+                               FontSize="17"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <Frame BackgroundColor="Transparent" Padding="0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedCriar"/>
+                    </Frame.GestureRecognizers>
+
+                    <HorizontalStackLayout Spacing="30">
+                        <Image Source="plus.png" 
+                               Aspect="AspectFill"
+                               HeightRequest="60"/>
+
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="CRIAR UM QR CODE"
+                                   VerticalOptions="Center"
+                                   FontSize="20"
+                                   FontAttributes="Bold"/>
+
+                            <Label Text="Crie um QrCode de mensagem ou através de um link"
+                                   FontSize="13"
+                                   LineBreakMode="WordWrap"
+                                   WidthRequest="200"/>
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" Padding="0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedLer"/>
+                    </Frame.GestureRecognizers>
+
+                    <HorizontalStackLayout Spacing="30">
+                        <Image Source="iconqr.png" Aspect="AspectFill"/>
+
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="LER UM QR CODE"
+                                   VerticalOptions="Center"
+                                   FontSize="20"
+                                   FontAttributes="Bold"/>
+
+                            <Label Text="Leia um QrCode existente"
+                                   FontSize="13"
+                                   LineBreakMode="WordWrap"
+                                   WidthRequest="200"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <ImageButton Source="aobre.png"
+                     HeightRequest="50"
+                     VerticalOptions="End"
+                     HorizontalOptions="End"
+                     Margin="30"
+                     WidthRequest="35"
+                     CornerRadius="20"
+                     Clicked="OnClickSobre"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QrApp_gerador.CriarQr"
+             BackgroundColor="#131313"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout Spacing="30" Margin="20" VerticalOptions="CenterAndExpand">
+
+        <Frame Padding="0" BorderColor="Black">
+            <Entry TextColor="Black"
+                   x:Name="TxtTitulo"
+                   Margin="10,0,10,0"
+                   FontFamily="MairyExtralight"
+                   Placeholder="Título"
+                   PlaceholderColor="Gray"/>
+        </Frame>
+
+        <Editor x:Name="EdTexto"
+                TextColor="Black"
+                FontSize="16"
+                BackgroundColor="White"
+                Placeholder="Digite uma mensagem ou link"
+                PlaceholderColor="Gray"
+                FontFamily="MairyExtralight"
+                HeightRequest="200"/>
+
+        <Button Text="GERAR UM QRCODE"
+                FontSize="15"
+                HorizontalOptions="Center"
+                Clicked="OnClickGerar"
+                BackgroundColor="Transparent"
+                TextColor="White"
+                BorderWidth="3"
+                FontFamily="VigaRegular"
+                FontAttributes="Bold"/>
+    </VerticalStackLayout>
+</ContentPage>
